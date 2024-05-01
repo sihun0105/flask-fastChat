@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPT 대화</title>
+  </head>
+  <body>
+    <h1>GPT 대화</h1>
+    <form action="/generate" method="post">
+      <label for="user_input">문장 입력:</label><br />
+      <input
+        type="text"
+        id="user_input"
+        name="user_input"
+        style="width: 400px"
+      /><br /><br />
+      <input type="submit" value="전송" />
+    </form>
+    <br />
+    {% if user_input %}
+    <h2>입력 문장:</h2>
+    <p>{{ user_input }}</p>
+    {% endif %} {% if generated_text %}
+    <h2>생성된 응답:</h2>
+    <p>{{ generated_text }}</p>
+    {% endif %}
+  </body>
+</html>
